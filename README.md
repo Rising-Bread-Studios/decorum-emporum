@@ -9,4 +9,8 @@ And no, Emporum isn't a real word, it's a slightly changed version of Emporium s
 **Credits**
 =======
 Texturing/Modeling - [Correlander](https://github.com/Correlander)  
-Coding - [Correlander](https://github.com/Correlander)
+Coding - [Correlander](https://github.com/Correlander)  
+
+**NOTICE**
+=======
+I'm just learning to code and know only a little java, if someone who isn't me or a friend happens to be looking at this, this will probably be under development for a bit.
