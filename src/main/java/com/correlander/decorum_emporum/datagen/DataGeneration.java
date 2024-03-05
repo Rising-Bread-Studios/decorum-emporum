@@ -4,8 +4,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
-import net.minecraft.world.level.levelgen.WorldDimensions;
-import net.minecraft.world.level.storage.loot.parameters.LootContextParamSet;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 
@@ -21,12 +19,12 @@ public class DataGeneration {
 
         generator.addProvider(event.includeClient(), new DEBlockStates(packOutput, event.getExistingFileHelper()));
         generator.addProvider(event.includeClient(), new DEItemModels(packOutput, event.getExistingFileHelper()));
-        generator.addProvider(event.includeClient(), new DELanguageProvider(packOutput, "en_us"));
+        generator.addProvider(event.includeClient(), new DELangProvider(packOutput, "en_us"));
 
         DEBlockTags blockTags = new DEBlockTags(packOutput, lookupProvider, event.getExistingFileHelper());
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new DEItemTags(packOutput, lookupProvider, blockTags, event.getExistingFileHelper()));
-        generator.addProvider(event.includeServer(), new DERecipes(packOutput));
+        generator.addProvider(event.includeServer(), new DERecipes(packOutput, event.getLookupProvider()));
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(DELootTables::new, LootContextParamSets.BLOCK))));
     }
