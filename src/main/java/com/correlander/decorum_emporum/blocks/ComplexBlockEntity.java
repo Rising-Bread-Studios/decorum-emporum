@@ -1,6 +1,5 @@
 package com.correlander.decorum_emporum.blocks;
 
-import ca.weblite.objc.Client;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
